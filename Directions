@@ -1,0 +1,6 @@
+It's time to see if you remember what I went through during the demo!
+
+Please do the same as yesterday: cloning a repo, making a new branch of your name, and editing on that branch.
+
+Afterwards, do essentially what I did during the demo: create a drivebase subsystem (only 1 motor is needed), create a command that accesses a method in the drivebase subsystem, and then assign a button binding
+  for the command in RobotContainer. Then commit and push when done.
