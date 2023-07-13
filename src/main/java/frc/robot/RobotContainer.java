@@ -1,22 +1,12 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.button.Button;
-import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-import edu.wpi.first.wpilibj.XboxController;
-
-import frc.robot.subsystems.Drivebase;
 
 public class RobotContainer {
-  private final Drivebase drivebase;
-  private final XboxController controller;
-  private final Button buttonB;
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
+
   public RobotContainer() {
-    drivebase = new Drivebase();
-    controller = new XboxController(0);
-    buttonB = new JoystickButton(controller, XboxController.Button.kB.value);
 
     // Configure the trigger bindings
     configureBindings();
@@ -32,13 +22,8 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
-    // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
 
-    // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
-    // cancelling on release.
-    buttonB.whenPressed(new ExampleMethodCommand(drivebase));
   }
-
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
    *
