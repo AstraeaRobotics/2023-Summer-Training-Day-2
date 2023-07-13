@@ -1,23 +1,23 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.button.Button;
-import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import edu.wpi.first.wpilibj2.command.button.Trigger;
 
-import frc.robot.subsystems.Drivebase;
+import frc.robot.commands.MotorCommand;
+import frc.robot.subsystems.MotorSubsystem;
+import edu.wpi.first.wpilibj.PS4Controller;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+
 
 public class RobotContainer {
-  private final Drivebase drivebase;
-  private final XboxController controller;
-  private final Button buttonB;
+  private final MotorSubsystem m_motorSubsystem = new MotorSubsystem;
+  private final PS4Controller ps4c = new PS4Controller(0);
+  private final JoystickButton r2 = new JoystickButton(ps4c, 7);
+
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
-    drivebase = new Drivebase();
-    controller = new XboxController(0);
-    buttonB = new JoystickButton(controller, XboxController.Button.kB.value);
-
     // Configure the trigger bindings
     configureBindings();
   }
@@ -36,7 +36,7 @@ public class RobotContainer {
 
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.
-    buttonB.whenPressed(new ExampleMethodCommand(drivebase));
+    r2.whileTrue(new MotorCommand(m_motorSubsystem));
   }
 
   /**
