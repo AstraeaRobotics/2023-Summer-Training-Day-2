@@ -1,10 +1,26 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.XboxController;
+
+import frc.robot.subsystems.*; // Import cannot be resolved
+import frc.robot.commands.*; // Import cannot be resolved
+
+import edu.wpi.first.wpilibj.PS4Controller;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 public class RobotContainer {
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
+
+  private final Drivebase m_drivebase = new Drivebase();
+
+  private final PS4Controller operator = new PS4Controller(0);
+
+  private final JoystickButton r2 = new JoystickButton(operator, 0);
+
+
 
   public RobotContainer() {
 
@@ -22,7 +38,7 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
-
+    r2.whileTrue(new Drive(m_drivebase));
   }
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
