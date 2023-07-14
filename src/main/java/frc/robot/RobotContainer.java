@@ -9,7 +9,9 @@ import frc.robot.Commands.*;
 import frc.robot.Subsystems.*;
 
 import edu.wpi.first.wpilibj.PS4Controller;
+import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 public class RobotContainer {
 
@@ -19,9 +21,7 @@ public class RobotContainer {
 
   private final PS4Controller operator = new PS4Controller(0);
 
-  private final JoystickButton r2 = new JoystickButton(operator, 0);
-
-
+  private final JoystickButton r2 = new JoystickButton(operator,0);
 
   public RobotContainer() {
 
