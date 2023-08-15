@@ -4,3 +4,9 @@ Please do the same as yesterday: cloning a repo, making a new branch of your nam
 
 Afterwards, do essentially what I did during the demo: create a drivebase subsystem (only 1 motor is needed), create a command that accesses a method in the drivebase subsystem, and then assign a button binding
   for the command in RobotContainer. Then commit and push when done.
+
+TODO: 
+- Create a drivebase subsystem (1 motor) (done)
+- Create a command that accesses a method in the drivebase subsystem (done)
+- Assign a button binding for the command in RobotContainer (done)
+- Commit and push
